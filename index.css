@@ -87,3 +87,9 @@ html, body {
     margin-left: 5%;
     z-index: 7;
 }
+
+#Hinzufügen{
+    position: absolute;
+    margin-left:50%;
+    align-content: center;
+}

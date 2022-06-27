@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <title>B117 LF09 Projekt</title>
-    <link href="Index.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
 </head>
 <body>
 Test
@@ -20,7 +20,7 @@ Test
 
         $port = $database->query("SELECT * FROM port");
         $porttabelle = $port->fetch_all(MYSQLI_ASSOC);
-        print_r($porttabelle);
+        print_r($porttabelle[1]['port_id']);
 
 
         $vlan = $database->query("SELECT * FROM vlan");
@@ -30,10 +30,15 @@ Test
         print_r($vlantabelle[1]['vlan_name']); //<-- Direkter Befehl auf entsprechenden Indexeintrag mit Wert
     
 
-        $vcolor = $database->query("SELECT vlan_farbe FROM VLAN");
+        $vcolor = $database->query("SELECT port_id, vlan_farbe FROM `b217`.`vlan`,`b217`.`port` WHERE vlan.vlan_id = port.vlan_id ORDER BY port_id ASC;");
         $vfarbetabelle = $vcolor->fetch_all(MYSQLI_ASSOC);
-        //print_r($vfarbetabelle['vlan_farbe']);
+        //print_r($vfarbetabelle);
         echo "</pre>";
+
+        // SELECT vlan_farbe, port_id FROM `b217`.`vlan`,`b217`.`port`  <-- Bisheriger Wissensstand. Aber falsche Ergebnisse
+
+        $portanzahl = $port->num_rows;
+        //echo("<h1>".$blub."</h1>");
     ?>
 <div>
 
@@ -42,7 +47,22 @@ Test
     <img class="toto" src="img/toto.png">
     <p class="title">B 117</p>
     <div class="vlan_cont">
-        <div class="vlan"style="background-color:blue;color:white">1
+        <?php 
+        
+        $i= 0;
+        while($i<$portanzahl)
+        {
+            
+            echo ("<div class='vlan'>".$porttabelle[$i]['port_id']);
+            echo ("<span class='text'>VLAN ID: ".$i."<br>VLAN 2<br>Farbe:".$vfarbetabelle[$i]["vlan_farbe"]."</span></div>");
+            $i++;
+        }
+
+
+       
+
+        ?>
+        <!--<div class="vlan"style="background-color:blue;color:white">1
             <span class="text">ID: 1<br>VLAN: 2<br>Farbe: </span>
         </div>
         <div class="vlan">2
@@ -102,6 +122,7 @@ Test
         <div class="vlan">20
             <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
         </div>
+    -->
         
     </div>
     <div id="Hinzufügen">

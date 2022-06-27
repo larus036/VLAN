@@ -5,7 +5,7 @@
     <link href="Index.css" rel="stylesheet">
 </head>
 <body>
-
+Test
 <?php
 //PHP Sektion mit SQL Verbindung
 
@@ -20,15 +20,19 @@
 
         $port = $database->query("SELECT * FROM port");
         $porttabelle = $port->fetch_all(MYSQLI_ASSOC);
+        print_r($porttabelle);
 
 
         $vlan = $database->query("SELECT * FROM vlan");
         $vlantabelle= $vlan->fetch_all(MYSQLI_ASSOC);
-        //print_r($vlantabelle[1]);
+     
+
+        print_r($vlantabelle[1]['vlan_name']); //<-- Direkter Befehl auf entsprechenden Indexeintrag mit Wert
+    
 
         $vcolor = $database->query("SELECT vlan_farbe FROM VLAN");
         $vfarbetabelle = $vcolor->fetch_all(MYSQLI_ASSOC);
-        print_r($vfarbetabelle['vlan_farbe']);
+        //print_r($vfarbetabelle['vlan_farbe']);
         echo "</pre>";
     ?>
 <div>
@@ -38,8 +42,8 @@
     <img class="toto" src="img/toto.png">
     <p class="title">B 117</p>
     <div class="vlan_cont">
-        <div class="vlan"style="background-color:black;color:white">1
-            <span class="text">ID: 1<br>VLAN: <?php /* print_r($vfarbetabelle[vlan_farbe])*/ ?> <br>Farbe: </span>
+        <div class="vlan"style="background-color:blue;color:white">1
+            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: </span>
         </div>
         <div class="vlan">2
             <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>

@@ -7,11 +7,11 @@ CREATE TABLE vlan
 (vlan_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
  vlan_name VARCHAR (10)NOT NULL,
  vlan_farbe VARCHAR(50)NOT NULL);
- INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("1", "Rot");
- INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("2", "Orange");
- INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("3", "Gelb");
-INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("4", "Lila");
-INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("5", "Blau");
+ INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("1", "rgb(255,0,0)");
+ INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("2", "rgb(255,153,51)");
+ INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("3", "rgb(255,255,0)");
+INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("4", "rgb(153,0,255)");
+INSERT INTO vlan(vlan_name,vlan_farbe) VALUES ("5", "rgb(0,0,255)");
 
  CREATE TABLE switch
  (switch_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,

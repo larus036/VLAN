@@ -35,8 +35,6 @@ Test
         //print_r($vfarbetabelle);
         echo "</pre>";
 
-        // SELECT vlan_farbe, port_id FROM `b217`.`vlan`,`b217`.`port`  <-- Bisheriger Wissensstand. Aber falsche Ergebnisse
-
         $portanzahl = $port->num_rows;
         //echo("<h1>".$blub."</h1>");
     ?>
@@ -53,8 +51,8 @@ Test
         while($i<$portanzahl)
         {
             
-            echo ("<div class='vlan'>".$porttabelle[$i]['port_id']);
-            echo ("<span class='text'>VLAN ID: ".$i."<br>VLAN 2<br>Farbe:".$vfarbetabelle[$i]["vlan_farbe"]."</span></div>");
+            echo ("<div class='vlan'style=background-color:".$vfarbetabelle[$i]['vlan_farbe'].">".$porttabelle[$i]['port_id']);
+            echo ("<span class='text'>Portnr.: ".$i."<br>VLAN "/*.$vlantabelle[$i]['vlan_id'].*/.$i."</span></div>");
             $i++;
         }
 
@@ -126,7 +124,7 @@ Test
         
     </div>
     <div id="Hinzufügen">
-        <button type="button" value="Hinzufügen">Push me Baby for new VLAN BABIES</button>        
+        <button type="button" value="Hinzufügen">Neues VLAN</button>        
     </div>
 </body>
 </html>

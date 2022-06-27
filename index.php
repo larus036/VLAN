@@ -21,10 +21,14 @@ Test
         $port = $database->query("SELECT * FROM port");
         $porttabelle = $port->fetch_all(MYSQLI_ASSOC);
         print_r($porttabelle[1]['port_id']);
+        $portanzahl = $port->num_rows;
+        //echo("<h1>".$portanzahl."</h1>");
 
 
         $vlan = $database->query("SELECT * FROM vlan");
         $vlantabelle= $vlan->fetch_all(MYSQLI_ASSOC);
+        $vlananzahl = $vlan->num_rows;
+        //echo("<h1>".$vlananzahl."</h1>");
      
 
         print_r($vlantabelle[1]['vlan_name']); //<-- Direkter Befehl auf entsprechenden Indexeintrag mit Wert
@@ -35,8 +39,7 @@ Test
         //print_r($vfarbetabelle);
         echo "</pre>";
 
-        $portanzahl = $port->num_rows;
-        //echo("<h1>".$blub."</h1>");
+       
     ?>
 <div>
 
@@ -52,7 +55,7 @@ Test
         {
             
             echo ("<div class='vlan'style=background-color:".$vfarbetabelle[$i]['vlan_farbe'].">".$porttabelle[$i]['port_id']);
-            echo ("<span class='text'>Portnr.: ".$i."<br>VLAN "/*.$vlantabelle[$i]['vlan_id'].*/.$i."</span></div>");
+            echo ("<span class='text'>Portnr.: ".$i."<br>VLAN ".$porttabelle[$i]['vlan_id']."</span></div>");
             $i++;
         }
 
@@ -126,21 +129,20 @@ Test
     <div id="Hinzufügen">
         <button type="button" value="Hinzufügen">Neues VLAN</button>        
     </div>
+    <div id="tabelle">
+        <?php
+        echo("<table>");
+            $k=0;
+
+            while($k<$vlananzahl){
+                echo($k);
+                $k++;
+            }
+        echo("</table>");
+        ?>
+    </div>
 </body>
 </html>
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <title>Switches</title>
-</head>
-<body>
--->
-
 <?php
 /*
         $database =  new mysqli("localhost", "root", "", "b217");
@@ -165,7 +167,7 @@ Test
         }
         echo("</ul>");
 */
-    ?>
+?>
     <!--
 </body>
 </html>

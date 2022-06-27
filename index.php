@@ -8,21 +8,38 @@
 
 <?php
 //PHP Sektion mit SQL Verbindung
+
         $database =  new mysqli("localhost", "root", "", "b217");
+        print_r ($database->connect_error);
+        $database->set_charset('utf8');
+        echo "<pre>"; //<pre> Übersichtliches Anzeigen von Formatierten Text
+
         $switches = $database->query("SELECT * FROM switch");
+        $switchtabelle = $switches->fetch_all(MYSQLI_ASSOC); //fetc_assoc()<-- Zusammenfassen eines Array-Objektes in übersichtlicher und benannter Objektstruktur
+        //print_r($switchtabelle);
+
+        $port = $database->query("SELECT * FROM port");
+        $porttabelle = $port->fetch_all(MYSQLI_ASSOC);
+
+
         $vlan = $database->query("SELECT * FROM vlan");
+        $vlantabelle= $vlan->fetch_all(MYSQLI_ASSOC);
+        //print_r($vlantabelle[1]);
+
         $vcolor = $database->query("SELECT vlan_farbe FROM VLAN");
-        echo $vcolor;
+        $vfarbetabelle = $vcolor->fetch_all(MYSQLI_ASSOC);
+        print_r($vfarbetabelle['vlan_farbe']);
+        echo "</pre>";
     ?>
+<div>
 
-
+</div>
     <img class="robo" src="img/robo.png">
     <img class="toto" src="img/toto.png">
     <p class="title">B 117</p>
     <div class="vlan_cont">
-        <div class="vlan"style="background-color:{$vcolor};">1
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: 
-            <?php echo $vcolor?> </span>
+        <div class="vlan"style="background-color:black;color:white">1
+            <span class="text">ID: 1<br>VLAN: <?php /* print_r($vfarbetabelle[vlan_farbe])*/ ?> <br>Farbe: </span>
         </div>
         <div class="vlan">2
             <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>

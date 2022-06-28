@@ -2,7 +2,6 @@
 
     function myFunction()
     {
-           alert("bcvhdskABÖFGHSKAFBVSHkafbhsKAÖGFBHJSqkaö");
-           document.getElementsByClassName("Formular")
+           document.getElementsByClassName("senden").innerHTML = "";
     }
 

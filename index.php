@@ -71,11 +71,18 @@
     <br><br>
     <div id="Hinzufügen">
         <button type="button" value="Hinzufügen">Neues VLAN</button>
-        <button type="button" onClick="myFunction()" value="Hinzufügen">PDF generieren</button>        
+        <button class='senden' type="button" onClick="myFunction()" value="Hinzufügen">PDF generieren</button>        
     </div>
 
  
     <br><br><br>
+    <div id='Formular' class='Formular' style="margin: left 50%;">
+        <form action="localhost\server.php" method="POST">
+            <input type="text" name="werte">
+            <button type="submit">Sende mich</button>
+        </form>
+    </div> 
+
     <div id="tabelle" class='columns has- is-half is-offset-one-quarter'>
         <?php
             echo("<table class='table is-striped is-hoverable content has-text-centered is-large' style=width:50%><th class='has-text-centered'>Vlan-Name</th><th class='has-text-centered'>Vlan-Farbe</th>");
@@ -92,9 +99,7 @@
         <form action="localhost\server.php" method="POST">
             <input type="text" name="werte">
             <button type="submit">Sende mich</button>
-
         </form>
-
     </div> 
 </body>
 </html>

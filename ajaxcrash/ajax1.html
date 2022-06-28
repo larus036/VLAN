@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax 1 - Text File Fetchen</title>
+</head>
+<body>
+    <button id="button">Textfile senden</button>
+
+    <script>
+        //Eventlistener erstellen - Reaktion auf einen Buttonklick vom Button mit der ID 'button'
+        document.getElementById('button').addEventListener('click',loadText);
+
+        function loadText(){
+
+            //Ein XHR Object erstellen
+            var xhr = new XMLHttpRequest();
+            // Eine Offene Funktion mit folgenden Parametern:
+            // type, Url/file, async
+            xhr.open('GET', 'Sample.txt', true);
+
+            xhr.onload = function(){
+                if(this.status == 200){ //200 == Okay, 403 == Forbidden, 404 == Not Found
+                    alert('Hat gesendet folgenden Lorem: '+ this.responseText);
+                }
+            }
+
+            //Senden von Request.
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

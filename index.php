@@ -3,6 +3,7 @@
 <head>
     <title>B117 LF09 Projekt</title>
     <link href="index.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 <body>
 Test
@@ -47,6 +48,7 @@ Test
     <img class="robo" src="img/robo.png">
     <img class="toto" src="img/toto.png">
     <p class="title">B 117</p>
+    
     <div class="vlan_cont">
         <?php 
         
@@ -63,83 +65,31 @@ Test
        
 
         ?>
-        <!--<div class="vlan"style="background-color:blue;color:white">1
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: </span>
-        </div>
-        <div class="vlan">2
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">3
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">4
-            <span class="text">TID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">5
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">11
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">12
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">13
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">14
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">15
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">6
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">7
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">8
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">9
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">10
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">16
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">17
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">18
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">19
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-        <div class="vlan">20
-            <span class="text">ID: 1<br>VLAN: 2<br>Farbe: Blau</span>
-        </div>
-    -->
         
+        
+    </div>
     </div>
     <div id="Hinzufügen">
         <button type="button" value="Hinzufügen">Neues VLAN</button>        
     </div>
-    <div id="tabelle">
+
+    
+    <div class="table-container">
+        <table class="table">
         <?php
         echo("<table>");
             $k=0;
 
             while($k<$vlananzahl){
+                echo"<tr>";
+                echo "<td>".vlan["vlan_name"]."</td>";
                 echo($k);
                 $k++;
+                echo"</tr>";
             }
         echo("</table>");
         ?>
+        </table>
     </div>
 </body>
 </html>

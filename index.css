@@ -1,62 +1,61 @@
 body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background-image: linear-gradient(rgb(230, 249, 255), rgb(226, 253, 226));
-    overflow: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(rgb(230, 249, 255), rgb(226, 253, 226));
+  overflow: auto;
 }
 
 .title {
-    font-size: 200px;
-    position: absolute;
-    margin-left: 35%;
-    margin-top: 1%;
+  font-size: 200px;
+  position: absolute;
+  margin-left: 35%;
+  margin-top: 1%;
 }
 
 .vlan_cont {
-    width: 100%;
-    height: 50%;
-    margin-top: 12%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border: 2px solid gray;
-   
+  width: 100%;
+  height: 50%;
+  margin-top: 12%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 2px solid gray;
 }
 
 .vlan {
-    width: 150px;
-    height: 150px;
-    margin: 1%;
-    margin-top: 2%;
-    border: 1px solid gray;
-    font-size: 30px;
-    cursor: pointer;
-    position: relative;
-    display: inline-block;
-    z-index: 9;
+  width: 100px;
+  height: 100px;
+  margin: 1%;
+  margin-top: 2%;
+  border: 1px solid gray;
+  font-size: 30px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  z-index: 9;
 }
 
 .text {
-    visibility: hidden;
-    width: 180px;
-    height: 100%;
-    background-color: #555;
-    color: #fff;
-    text-align: left;
-    border-radius: 6px;
-    padding: 20px 20px;
-    position: absolute;
-    z-index: 8;
-    bottom: 125%;
-    left: 45%;
-    margin-left: -80px;
-    opacity: 0;
-    transition: opacity 0.3s;
+  visibility: hidden;
+  width: 180px;
+  height: 100%;
+  background-color: #555;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 20px 20px;
+  position: absolute;
+  z-index: 8;
+  bottom: 125%;
+  left: 45%;
+  margin-left: -80px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .text::after {
-    content: "";
+  content: "";
   position: absolute;
   top: 100%;
   left: 50%;
@@ -67,29 +66,28 @@ body {
 }
 
 .vlan:hover .text {
-    visibility: visible;
-    opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
-
 .robo {
-    position: absolute;
-    height: 300px;
-    z-index: 7;
-    margin-top: 32.5%;
-    margin-left: 82%;
+  position: absolute;
+  height: 300px;
+  z-index: 7;
+  margin-top: 32.5%;
+  margin-left: 82%;
 }
 
 .toto {
-    position: absolute;
-    height: 250px;
-    margin-top: -0.5%;
-    margin-left: 5%;
-    z-index: 7;
+  position: absolute;
+  height: 250px;
+  margin-top: -0.5%;
+  margin-left: 5%;
+  z-index: 7;
 }
 
-#Hinzufügen{
-    position: absolute;
-    margin-left:50%;
-    align-content: center;
+#Hinzufügen {
+  position: absolute;
+  margin-left: 50%;
+  align-content: center;
 }

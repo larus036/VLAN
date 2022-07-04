@@ -21,11 +21,25 @@
             // type, Url/file, async
             xhr.open('GET', 'Sample.txt', true);
 
-            xhr.onload = function(){
-                if(this.status == 200){ //200 == Okay, 403 == Forbidden, 404 == Not Found
-                    alert('Hat gesendet folgenden Lorem: '+ this.responseText);
+            // xhr.onload = function(){
+            //     if(this.status == 200){ //200 == Okay, 403 == Forbidden, 404 == Not Found
+            //         alert('Hat gesendet folgenden Lorem: '+ this.responseText);
+            //     }
+            // }
+
+            xhr.onreadystatechange = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    console.log(this.responseText +" "+ this.readyState +" "+ this.status);
+                    console.log(this);
                 }
             }
+
+            //      Value	State	Description
+            // 0	UNSENT	Client has been created. open() not called yet.
+            // 1	OPENED	open() has been called.
+            // 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+            // 3	LOADING	Downloading; responseText holds partial data.
+            // 4	DONE	The operation is complete.
 
             //Senden von Request.
             xhr.send();

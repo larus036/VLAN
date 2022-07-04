@@ -24,7 +24,7 @@
 
         $switches = $database->query("SELECT * FROM switch");
         $switchtabelle = $switches->fetch_all(MYSQLI_ASSOC); //fetc_assoc()<-- Zusammenfassen eines Array-Objektes in übersichtlicher und benannter Objektstruktur
-        //print_r($switchtabelle);
+        //print_r($switchestabelle);
 
         $port = $database->query("SELECT * FROM port");
         $porttabelle = $port->fetch_all(MYSQLI_ASSOC);

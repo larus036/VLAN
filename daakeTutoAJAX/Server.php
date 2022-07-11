@@ -30,7 +30,8 @@
         {
             if($menge == 1)
             {
-                echo("Datenbank-Eintrag vorhandn");
+                
+                header('Location:form.php');
             }
         }
     }

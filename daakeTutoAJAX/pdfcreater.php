@@ -10,7 +10,7 @@ $tel = $_POST['phone'];
 $message = $_POST['message'];
 
 //PDF Instanz schaffen
-$mpdf = new \Mpdf\Mpdf();
+$mpdf = new mPDF('utf-8','A4', '');
 
 //PDF machen
 $data = '';

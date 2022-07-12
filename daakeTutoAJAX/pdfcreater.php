@@ -10,13 +10,13 @@ $tel = $_POST['phone'];
 $message = $_POST['message'];
 
 //PDF Instanz schaffen
-$mpdf = new mPDF('utf-8','A4', '');
+$mpdf = new \Mpdf\Mpdf();
 
-//PDF machen
+//PDF Variable machen
 $data = '';
 
 //Überschrift
-$data .= '<h1> Deine Daten=</h1><p>';
+$data .= '<h1> Deine Daten</h1><p>';
 
 $data .= '<strong> Vorname</strong> ' .$vname. '<br />';
 $data .= '<strong> Nachname</strong> ' .$nname. '<br />';

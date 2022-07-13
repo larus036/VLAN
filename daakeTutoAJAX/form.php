@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-    <?php echo("<h2>Datenbank-Eintrag vorhanden</h2>");
+    <?php echo("<h1 style='position:absolute; top:0%; margin-top:0px;'>Datenbank-Eintrag vorhanden</h1>");
     ?>
     <div >
         <button id="dmbtn" type="image" onclick=dmmode(); ><img class="moon" id="bild" src="img/moon.png" style="width:50px; height:50px"></button>
@@ -30,6 +30,28 @@
         <button type="submit" name="PDF abschicken" onclick="pdfp()">PDF machen daraus!</button>
 
     </form>
+    <div id="BtnElemente">
+        <button type=button onclick="zähler()">
+            Ich bin <span id="zahl">0</span> schon gedrückt worden
+        </button>
+        <button type=button onclick="reset()">
+            Reset
+        </button>
+    </div>
+
+    <script>
+        var i = 0;
+        var zahl = document.getElementById("zahl");
+        function zähler(){
+            i++;
+            zahl.innerHTML = i;
+        }
+
+        function reset(){
+            i = 0;
+            zahl.innerHTML = i;
+        }
+    </script>
 
     <script> //Darkmodeimplementation
         function dmmode(){
@@ -39,16 +61,15 @@
             btnclick.classList.toggle("darkmode");      // Fügt der Klasse den Namen Darkmode hinzu
 
             if(bild.className == "moon"){
-            console.log("Test");
-            bild.src = "img/sun.png";
-            bild.className = "sun";
-        }
-
-        else{
-            bild.src = "img/moon.png";
-            console.log(bild.className);
-            bild.className = "moon";
-        }
+                	console.log("Test");
+                bild.src = "img/sun.png";
+                bild.className = "sun";
+            }
+            else{
+                bild.src = "img/moon.png";
+                console.log(bild.className);
+                bild.className = "moon";
+            }
         }
     </script>
     </body>

@@ -1,6 +1,17 @@
 <?php
-
+//function pdfp(){   //Wie würde das als Funktion aussehen? Wie müsste ich die Übergabeparameter aussehen?
+ 
 require_once __DIR__ . '/vendor/autoload.php';
+
+/*
+//Postet Inhalte in Variabeln speichern:
+$vname = $giveme['vname'];
+$nname = $giveme['nname'];
+$email = $giveme['email'];
+$tel = $giveme['phone'];
+$message = $giveme['message'];
+*/
+
 
 //Postet Inhalte in Variabeln speichern:
 $vname = $_POST['vname'];
@@ -33,5 +44,6 @@ $mpdf->WriteHTML($data);
 
 //Dem Browser schicken
 
-$mpdf->Output('DeinePDF.pdf', 'D');
+$mpdf->Output('DeinePDF.pdf', 'I');
 
+//}

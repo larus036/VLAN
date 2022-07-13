@@ -1,0 +1,25 @@
+.darkmode {
+background-color: rgb(56, 54, 54);
+color: white;
+}
+
+body {
+    padding: 25px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+  }
+
+#dmbtn {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+#dmbtn:hover {
+    
+    background: grey;
+}
